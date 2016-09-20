@@ -1,22 +1,18 @@
 from math import *
 
-k = 2520
+primes = (5,7,9,11,13,16,17,19)
 
-check = True
+def div(x):
+	return all(True if x % i == 0 else False for i in primes)
 
-while check:
+k = 0
+x = 20
+while True:
 
-    count = 0
-    k += 2520
+	k += x 
 
-    for i in range(11,20):
+	if div(k):
+		break
 
-        if k % i == 0:
-            count += 1
-
-    if count == 9:
-        check = False
-    
-    print k
 
 print k

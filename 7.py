@@ -1,25 +1,18 @@
 from math import *
 
-def prime(x):
-    l = [2]
-    
-    X = 3
+primes = []
 
-    while len(l) < x:
+def isprime(x):
+	return not any(True if x % i == 0 else False for i in primes)
 
-        check = True
-
-        for i in range(2,2+int(floor(sqrt(X)))):
-
-            if X % i == 0:
-                check = False
-
-        if check == True:
-            l.append(X)
-            print X
-
-        X += 1
-    print l
-    return l[x-2]
+def prime(count):
+	global primes
+	k = 1
+	while count:
+		k += 1
+		if isprime(k):
+			primes.append(k)
+			count -= 1
+	return k
 
 print prime(10001)

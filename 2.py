@@ -1,30 +1,20 @@
-import time
+a = 0
+b = 1
 
+def next_fib():
+	global a
+	global b
+	c = a + b
+	a = b
+	b = c
+	return c
 
-
-
-def fib(x):
-    if x == 1 or x == 2:
-        return 1
-    else:
-        y = fib(x - 1) + fib(x - 2)
-
-    return y
-
-l = []
-
-check = True
-r = 3
-
-while check:
+sum = 0
+x = next_fib()
+while x < 4000000:
     
-    y = fib(r)
-        
-    if y > 4000000:
-        check = False
-    elif y % 2 == 0:
-        l.append(y)
+	if x % 2 == 0:
+		sum += x
+	x = next_fib()
 
-    r += 1
-
-print sum(l)
+print sum
